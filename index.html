@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        /* General styling */
+        body {
+            background: #474747;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .navbar-brand {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar-nav {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .nav-item {
+            margin-left: 1rem;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            color: #ddd;
+        }
+
+        /* Toggler button */
+        .navbar-toggler {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: white;
+        }
+
+        /* Name section styling */
+        .name {
+            margin-top: 70px;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            padding: 50px 100px;
+            color: white;
+        }
+
+        .name h4 {
+            margin-bottom: 5px;
+        }
+
+        .name h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .name p {
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .profile-img {
+            width: 300px; /* Sesuaikan ukuran dengan foto Anda */
+            height: auto;
+            margin-left: 400px; /* Jarak antara foto dan teks */
+            border-radius: 50%; /* Agar foto bundar jika perlu */
+            display: block; /* Secara default, foto ditampilkan */
+        }
+
+        /* Media queries for responsive design */
+        @media (max-width: 1024px) {
+            .profile-img {
+                width: 200px; /* Ukuran foto lebih kecil untuk layar lebih kecil */
+                margin-left: 0; /* Reset margin untuk foto */
+                margin-right: 20px; /* Jarak antara foto dan teks */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-nav {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                display: none;
+            }
+
+            .navbar-nav.active {
+                display: flex;
+            }
+
+            .nav-item {
+                margin: 0.5rem 0;
+            }
+
+            .navbar-toggler {
+                display: block;
+            }
+
+            .name {
+                padding: 50px 20px;
+            }
+            
+            .profile-img {
+                display: none; /* Foto disembunyikan di layar ponsel */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">DBK</div>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="cv.html">CV</a>
+            </li>
+        </ul>
+        <button class="navbar-toggler" onclick="toggleNavbar()">☰</button>
+    </nav>
+    <div class="name">
+        <div>
+            <h4>Hello, I'm Dickri</h4>
+            <h1>Web Developer</h1>
+            <p>Saya adalah seorang web developer yang bersemangat dalam menciptakan
+                dan mengembangkan aplikasi web yang inovatif dan fungsional.</p>
+            <a href="cv.pdf" download="cv.pdf">
+                <button>Download CV</button>
+            </a>
+        </div>
+        <img src="pp.jpeg" alt="Profile Picture" class="profile-img">
+    </div>
+
+    <script>
+        function toggleNavbar() {
+            var nav = document.querySelector('.navbar-nav');
+            nav.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>
